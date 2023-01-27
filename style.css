@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
+    background-color: black;
     color: white;
     box-sizing: border-box;
     display: flex;
@@ -15,9 +15,9 @@ h1 {
     padding: 30px;
 }
 
-.container1 {
+.container-input {
     margin: 1.5rem auto;
-    background-color: #4B0082;
+    background-color: #800080;
     width: 75%;
     border: 5px solid white;
     border-radius: 6px;
@@ -27,25 +27,28 @@ h1 {
     align-items:center;
 }
 
-.container2 {
+.container-results {
     margin: 1.5rem auto;
-    border: 5px solid white;
-    border-radius: 6px;
     width: 75%;
     justify-items:center;
     
 }
- .item1 {
+ .items-input {
     padding: 0.1rem;
     margin: 10px 5px;
     width: 7rem;
     height: 2.5rem;
  }
-.item2 {
-    padding: 0.2rem;
+.items-results {
+    padding: 0.5rem 1rem;
     margin: 0 auto;
-    height: 6rem;
+    height: 4rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
     text-align: center;
+    line-height: 3.4rem;
+    color: black;
 }
 
 button {
@@ -60,33 +63,14 @@ input {
     border-radius: 5px;
     width: 60%;
 }
-.maxzone {
-    background-color: rgb(160, 156, 156);
-}
 
-.zone60 {
-    background-color: blue;
-}
-
-.zone70 {
-    background-color: green;
-}
-.zone80 {
-    background-color: yellow;
-    color: black;
-}
-
-.zone90 {
-    background-color: red;
-    color: black;
-}
 #imgheart1 {
     margin: auto;
     border-radius: 6px;
     max-width: 15%;
     position: absolute;
     left: 10px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 #imgheart2 {
@@ -95,7 +79,7 @@ input {
     max-width: 15%;
     position: absolute;
     right: 10px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .bottom {

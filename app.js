@@ -4,66 +4,68 @@ const calcBtn = document.querySelector('#btnCalc');
 const resetBtn = document.querySelector('#btnRes');
 const inputFields = document.querySelectorAll('input');
 
-function Maxhr() {	
+function calculateZones() {	
   const age = document.querySelector("#userage").value;
 	const restHr = document.querySelector("#userest").value;
+	const mhr = 220 - parseInt(age);
+	const hrReserve = mhr - parseInt(restHr);	
 
   if (age == "" || age == NaN) { 
     alert("Please enter valid age");
 	} else if (restHr == "" || restHr == NaN) {
 		alert("Please enter valid resting heart rate");
-	} else {
-			let mhr = 220 - parseInt(age);
-			let hrReserve = mhr - parseInt(restHr);		
-			let zone60 = Math.round((hrReserve * 0.6) + parseInt(restHr)); 			
-			let zone70 = Math.round((hrReserve * 0.7) + parseInt(restHr));
-			let zone80 = Math.round((hrReserve * 0.8) + parseInt(restHr));
-			let zone90 = Math.round((hrReserve * 0.9) + parseInt(restHr));
-			// document.querySelector("#max").innerHTML = mhr;
-			// document.querySelector("#h60").innerHTML = zone60;
-			// document.querySelector("#h70").innerHTML = zone70;
-			// document.querySelector("#h80").innerHTML = zone80; 
-			// document.querySelector("#h90").innerHTML = zone90;
-			// console.log(mhr, hrReserve);
-			// console.log(zone60);
-			// console.log(zone70);
-			// console.log(zone80);
-			// console.log(zone90);
-		}
+	} else {		
+			var zone60 = Math.round((hrReserve * 0.6) + parseInt(restHr)); 			
+			var zone70 = Math.round((hrReserve * 0.7) + parseInt(restHr));
+			var zone80 = Math.round((hrReserve * 0.8) + parseInt(restHr));
+			var zone90 = Math.round((hrReserve * 0.9) + parseInt(restHr));
+
+		// show results with DOM
+		const resContainer = document.querySelector('.container-results');
+
+		const maxPara = document.createElement('p');
+		maxPara.innerText = `Max heart rate is ${mhr}`;
+		maxPara.style.backgroundColor = '#b3b3b3';
+		maxPara.classList.add('items-results')
+		resContainer.appendChild(maxPara);
+
+		const zone60Para = document.createElement('p');
+		zone60Para.innerText = `60% of MHR is ${zone60}`;
+		zone60Para.style.backgroundColor = '#3333ff';
+		zone60Para.classList.add('items-results')
+		maxPara.after(zone60Para);
+
+		const zone70Para = document.createElement('p');
+		zone70Para.innerText = `70% of MHR is ${zone70}`;
+		zone70Para.style.backgroundColor = '#00cc00';
+		zone70Para.classList.add('items-results')
+		zone60Para.after(zone70Para);
+
+		const zone80Para = document.createElement('p');
+		zone80Para.innerText = `80% of MHR is ${zone80}`;
+		zone80Para.style.backgroundColor = 'yellow';
+		zone80Para.classList.add('items-results')
+		zone70Para.after(zone80Para);
+
+		const zone90Para = document.createElement('p');
+		zone90Para.innerText = `90% of MHR is ${zone90}`;
+		zone90Para.style.backgroundColor = '#ff3333';
+		zone90Para.classList.add('items-results')
+		zone80Para.after(zone90Para);
 	}
+}
 
-	// function createResults () {
-	// 	const divResutls = document.createElement('div');
- 	// 	divResutls.className = 'container2'
-	// }
+calcBtn.addEventListener('click', calculateZones);
 
-calcBtn.addEventListener('click', Maxhr);
 window.addEventListener ('keypress', function(e) {
 		if (e.key === 'Enter') {
-			Maxhr();
+			calculateZones();
 		}
 });
 
 resetBtn.addEventListener('click', () => {
 	for (input of inputFields) {
 		input.value = '';
-		// remov divResutls with zones
-		// divResutls.remove();
 	}
+	// remove children of resContainer
 })
-
-// DOM to add zones with colors
-
-
-// const addItemInput = document.querySelector('#addItem');
-// const itemsUL = document.querySelector('#items');
-
-// addItemInput.addEventListener('keypress', function(e) {
-// 	if (e.key === 'Enter') {
-// 		if (!this.value) return; //if input is empty, skip everything
-// 		//add a new item to list
-// 		const newItemText = this.value;
-// 		const newItem = document.createElement('li');
-// 		newItem.innerText = newItemText;
-// 		itemsUL.appendChild(newItem);
-// 		this.value = '';
