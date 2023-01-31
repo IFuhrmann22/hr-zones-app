@@ -1,10 +1,11 @@
-// commit to github
+	// how to call the function only once?
 
 const calcBtn = document.querySelector('#btnCalc');
 const resetBtn = document.querySelector('#btnRes');
 const inputFields = document.querySelectorAll('input');
 
 function calculateZones() {	
+
   const age = document.querySelector("#userage").value;
 	const restHr = document.querySelector("#userest").value;
 	const mhr = 220 - parseInt(age);
@@ -57,6 +58,15 @@ function calculateZones() {
 
 calcBtn.addEventListener('click', calculateZones);
 
+// calcBtn.addEventListener('click', () => {
+// 	const calledOnce = false;
+// 	return calculateZones();
+// 		if (!calledOnce) {
+// 			done = true;
+// 		}
+// 	}
+// );
+
 window.addEventListener ('keypress', function(e) {
 		if (e.key === 'Enter') {
 			calculateZones();
@@ -64,8 +74,5 @@ window.addEventListener ('keypress', function(e) {
 });
 
 resetBtn.addEventListener('click', () => {
-	for (input of inputFields) {
-		input.value = '';
-	}
-	// remove children of resContainer
+	document.location.reload();
 })
