@@ -12,12 +12,12 @@ body {
 
 h1 {
     text-align: center;
-    margin: 5rem 3rem auto;
+    margin: 2rem auto 2rem;
     font-size: 2.5rem;
 }
 
 .container-input {
-    margin: 2rem auto;
+    margin: 1rem auto;
     background-color: hsla(281, 69%, 61%, 0.541);
     width: 80%;
     border: 5px solid white;
@@ -29,7 +29,7 @@ h1 {
 }
 
 .container-results {
-    margin: 1.5rem auto;
+    margin: 2.5rem auto;
     width: 80%;
     justify-items:center;
     
@@ -64,27 +64,17 @@ input {
 }
 
 #imgheart1 {
-    margin: auto;
-    border-radius: 6px;
-    max-width: 25%;
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 30%;
     height: auto;
-    position: absolute;
-    left: 10px;
-    opacity: 0.6;
-}
-
-#imgheart2 {
-    margin: auto;
-    border-radius: 6px;
-    max-width: 15%;
-    position: absolute;
-    right: 10px;
-    opacity: 0.6;
+    position: relative;
+    opacity: 0.5;
 }
 
 .bottom {
     position: fixed;
-    bottom: 0.1rem;
+    bottom: 0.3rem;
     display: flex;
     opacity: 0.7;
     justify-content: center;
@@ -93,11 +83,11 @@ input {
 }
 
 .bottom img {
-    width: 2rem;
+    width: 3rem;
     margin: 2rem;
 }
 
 .bottom footer { 
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-style: italic;
 }

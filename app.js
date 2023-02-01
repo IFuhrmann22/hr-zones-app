@@ -56,20 +56,16 @@ function calculateZones() {
 	}
 }
 
-calcBtn.addEventListener('click', calculateZones);
+calcBtn.addEventListener('click', () => {
+	calculateZones(),
+	calcBtn.disabled = true;
+})
 
-// calcBtn.addEventListener('click', () => {
-// 	const calledOnce = false;
-// 	return calculateZones();
-// 		if (!calledOnce) {
-// 			done = true;
-// 		}
-// 	}
-// );
-
+// disable keypress enter after one press
 window.addEventListener ('keypress', function(e) {
 		if (e.key === 'Enter') {
 			calculateZones();
+			calcBtn.disabled = true;
 		}
 });
 
