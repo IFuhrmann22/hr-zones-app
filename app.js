@@ -3,9 +3,9 @@
 const calcBtn = document.querySelector('#btnCalc');
 const resetBtn = document.querySelector('#btnRes');
 const inputFields = document.querySelectorAll('input');
+const calcDone = false;
 
-function calculateZones() {	
-
+function calculateZones() {
   const age = document.querySelector("#userage").value;
 	const restHr = document.querySelector("#userest").value;
 	const mhr = 220 - parseInt(age);
@@ -61,13 +61,31 @@ calcBtn.addEventListener('click', () => {
 	calcBtn.disabled = true;
 })
 
-// disable keypress enter after one press
-window.addEventListener ('keypress', function(e) {
-		if (e.key === 'Enter') {
-			calculateZones();
-			calcBtn.disabled = true;
-		}
+// start of working section
+
+// window.addEventListener ('keyup', function(e) {
+// 		if (e.key === 'Enter') {
+// 			calculateZones();
+// 			calcBtn.disabled = true;
+// 		}
+// });
+
+// end of working section
+
+window.addEventListener ('keyup', function(e) {
+	if (e.key === 'Enter') {
+		calculateZones();
+		calcBtn.disabled = true;
+	}	
 });
+	
+		
+		
+// 	}	
+// 	// remove keyup event or stop adding DOMs
+// 	// resContainer.innerHTML = '';
+// );
+
 
 resetBtn.addEventListener('click', () => {
 	document.location.reload();
